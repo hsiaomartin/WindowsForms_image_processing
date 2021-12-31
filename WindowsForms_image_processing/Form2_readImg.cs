@@ -46,7 +46,7 @@ namespace WindowsForms_image_processing
             //e.Graphics.Clear(Color.Black);
             gMyImg.Clear(Color.Black);
             //my_Picture = new myPicture(w,h );
-            int count = 0;
+
             for (int Ycount = h - 1; Ycount >= 0; Ycount--)
             {
                 for (int Xcount = 0; Xcount < w; Xcount++)
@@ -59,7 +59,7 @@ namespace WindowsForms_image_processing
                     //my_Picture.location[count] = new Point(Xcount, h-Ycount-1);
                     //Console.WriteLine("(" + my_Picture.location[count].X + "," + my_Picture.location[count].Y + ")");
                     gMyImg.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
-                    count++;
+
                 }
             }
             
@@ -560,6 +560,15 @@ namespace WindowsForms_image_processing
             form_Cut.read_photo = myImgData;
             form_Cut.size = sz;
             form_Cut.Show();
+        }
+
+        private void histogramSpecificationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Histogram_Specification form_Histogram_Specification = new Form_Histogram_Specification();
+
+            form_Histogram_Specification.bitmap = bitmap;
+            form_Histogram_Specification.read_photo = myImgData;
+            form_Histogram_Specification.Show();
         }
     }
 

@@ -273,7 +273,7 @@ namespace WindowsForms_image_processing
     {
         public myPixel[,] my_Pixel { get; set; }
         int width, height;
-        Size picture_size;
+        public Size picture_size;
         public myPicture(int width,int height)
         {
             my_Pixel = new myPixel[width , height];
@@ -292,6 +292,51 @@ namespace WindowsForms_image_processing
         public int Height { get => height; set => height = value; }
     }
 
+    public class myHistogram
+    {
+        int[] r;
+        int[] g;
+        int[] b;
 
+        int[] cdf_R;
+        int[] cdf_G;
+        int[] cdf_B;
+        public int[] r_R;
+        public int[] r_G;
+        public int[] r_B;
+        public myHistogram(int bit_depth,int size)
+        {
+            r = new int[bit_depth];
+            g = new int[bit_depth];
+            b = new int[bit_depth];
+
+            cdf_R = new int[bit_depth];
+            cdf_G = new int[bit_depth];
+            cdf_B = new int[bit_depth];
+
+            r_R = new int[size+1];
+            r_G = new int[size+1];
+            r_B = new int[size+1];
+
+            Array.Clear(r, 0, r.Length);
+            Array.Clear(g, 0, g.Length);
+            Array.Clear(b, 0, b.Length);
+
+            Array.Clear(cdf_R, 0, cdf_R.Length);
+            Array.Clear(cdf_G, 0, cdf_G.Length);
+            Array.Clear(cdf_B, 0, cdf_B.Length);
+
+            Array.Clear(r_R, 0, r_R.Length);
+            Array.Clear(r_G, 0, r_G.Length);
+            Array.Clear(r_B, 0, r_B.Length);
+        }
+
+        public int[] R { get => r; set => r = value; }
+        public int[] G { get => g; set => g = value; }
+        public int[] B { get => b; set => b = value; }
+        public int[] Cdf_R { get => cdf_R; set => cdf_R = value; }
+        public int[] Cdf_G { get => cdf_G; set => cdf_G = value; }
+        public int[] Cdf_B { get => cdf_B; set => cdf_B = value; }
+    }
 
 }

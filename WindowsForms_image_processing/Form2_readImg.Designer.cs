@@ -252,6 +252,7 @@ namespace WindowsForms_image_processing
             this.histogramSpecificationToolStripMenuItem.Name = "histogramSpecificationToolStripMenuItem";
             this.histogramSpecificationToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.histogramSpecificationToolStripMenuItem.Text = "Histogram Specification";
+            this.histogramSpecificationToolStripMenuItem.Click += new System.EventHandler(this.histogramSpecificationToolStripMenuItem_Click);
             // 
             // huffmanToolStripMenuItem
             // 
