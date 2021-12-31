@@ -47,6 +47,10 @@ namespace WindowsForms_image_processing
             this.bitPlaneSlicingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wartermarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contrastStretchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magicWandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.histogramEqualizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.histogramSpecificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.huffmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outlierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,10 +71,6 @@ namespace WindowsForms_image_processing
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.histogramEqualizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.histogramSpecificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.magicWandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.huffmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -143,63 +143,63 @@ namespace WindowsForms_image_processing
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.cutToolStripMenuItem.Text = "cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
             // enlargeToolStripMenuItem
             // 
             this.enlargeToolStripMenuItem.Name = "enlargeToolStripMenuItem";
-            this.enlargeToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.enlargeToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.enlargeToolStripMenuItem.Text = "Scaling";
             this.enlargeToolStripMenuItem.Click += new System.EventHandler(this.enlargeToolStripMenuItem_Click);
             // 
             // rotateToolStripMenuItem
             // 
             this.rotateToolStripMenuItem.Name = "rotateToolStripMenuItem";
-            this.rotateToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.rotateToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.rotateToolStripMenuItem.Text = "rotate";
             this.rotateToolStripMenuItem.Click += new System.EventHandler(this.rotateToolStripMenuItem_Click);
             // 
             // rGBHSIToolStripMenuItem
             // 
             this.rGBHSIToolStripMenuItem.Name = "rGBHSIToolStripMenuItem";
-            this.rGBHSIToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.rGBHSIToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.rGBHSIToolStripMenuItem.Text = "RGB_HSI_Gray";
             this.rGBHSIToolStripMenuItem.Click += new System.EventHandler(this.rGBHSIToolStripMenuItem_Click);
             // 
             // brightnessToolStripMenuItem
             // 
             this.brightnessToolStripMenuItem.Name = "brightnessToolStripMenuItem";
-            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.brightnessToolStripMenuItem.Text = "Brightness";
             this.brightnessToolStripMenuItem.Click += new System.EventHandler(this.brightnessToolStripMenuItem_Click);
             // 
             // transparencyToolStripMenuItem
             // 
             this.transparencyToolStripMenuItem.Name = "transparencyToolStripMenuItem";
-            this.transparencyToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.transparencyToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.transparencyToolStripMenuItem.Text = "Transparency";
             this.transparencyToolStripMenuItem.Click += new System.EventHandler(this.transparencyToolStripMenuItem_Click);
             // 
             // histogramToolStripMenuItem
             // 
             this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.histogramToolStripMenuItem.Text = "Histogram";
             this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
             // 
             // negativeToolStripMenuItem
             // 
             this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
-            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.negativeToolStripMenuItem.Text = "Negative";
             this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
             // 
             // thresholdingToolStripMenuItem
             // 
             this.thresholdingToolStripMenuItem.Name = "thresholdingToolStripMenuItem";
-            this.thresholdingToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.thresholdingToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.thresholdingToolStripMenuItem.Text = "Thresholding";
             this.thresholdingToolStripMenuItem.Click += new System.EventHandler(this.thresholdingToolStripMenuItem_Click);
             // 
@@ -209,7 +209,7 @@ namespace WindowsForms_image_processing
             this.bitPlaneSlicingToolStripMenuItem,
             this.wartermarkToolStripMenuItem});
             this.slicingToolStripMenuItem.Name = "slicingToolStripMenuItem";
-            this.slicingToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.slicingToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.slicingToolStripMenuItem.Text = "Slicing";
             // 
             // bitPlaneSlicingToolStripMenuItem
@@ -229,9 +229,35 @@ namespace WindowsForms_image_processing
             // contrastStretchingToolStripMenuItem
             // 
             this.contrastStretchingToolStripMenuItem.Name = "contrastStretchingToolStripMenuItem";
-            this.contrastStretchingToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.contrastStretchingToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.contrastStretchingToolStripMenuItem.Text = "Contrast Stretching";
             this.contrastStretchingToolStripMenuItem.Click += new System.EventHandler(this.contrastStretchingToolStripMenuItem_Click);
+            // 
+            // magicWandToolStripMenuItem
+            // 
+            this.magicWandToolStripMenuItem.Name = "magicWandToolStripMenuItem";
+            this.magicWandToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.magicWandToolStripMenuItem.Text = "Magic Wand";
+            this.magicWandToolStripMenuItem.Click += new System.EventHandler(this.magicWandToolStripMenuItem_Click);
+            // 
+            // histogramEqualizationToolStripMenuItem
+            // 
+            this.histogramEqualizationToolStripMenuItem.Name = "histogramEqualizationToolStripMenuItem";
+            this.histogramEqualizationToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.histogramEqualizationToolStripMenuItem.Text = "Histogram Equalization";
+            this.histogramEqualizationToolStripMenuItem.Click += new System.EventHandler(this.histogramEqualizationToolStripMenuItem_Click);
+            // 
+            // histogramSpecificationToolStripMenuItem
+            // 
+            this.histogramSpecificationToolStripMenuItem.Name = "histogramSpecificationToolStripMenuItem";
+            this.histogramSpecificationToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.histogramSpecificationToolStripMenuItem.Text = "Histogram Specification";
+            // 
+            // huffmanToolStripMenuItem
+            // 
+            this.huffmanToolStripMenuItem.Name = "huffmanToolStripMenuItem";
+            this.huffmanToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.huffmanToolStripMenuItem.Text = "Huffman";
             // 
             // filterToolStripMenuItem
             // 
@@ -390,31 +416,6 @@ namespace WindowsForms_image_processing
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            // 
-            // histogramEqualizationToolStripMenuItem
-            // 
-            this.histogramEqualizationToolStripMenuItem.Name = "histogramEqualizationToolStripMenuItem";
-            this.histogramEqualizationToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.histogramEqualizationToolStripMenuItem.Text = "Histogram Equalization";
-            this.histogramEqualizationToolStripMenuItem.Click += new System.EventHandler(this.histogramEqualizationToolStripMenuItem_Click);
-            // 
-            // histogramSpecificationToolStripMenuItem
-            // 
-            this.histogramSpecificationToolStripMenuItem.Name = "histogramSpecificationToolStripMenuItem";
-            this.histogramSpecificationToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.histogramSpecificationToolStripMenuItem.Text = "Histogram Specification";
-            // 
-            // magicWandToolStripMenuItem
-            // 
-            this.magicWandToolStripMenuItem.Name = "magicWandToolStripMenuItem";
-            this.magicWandToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.magicWandToolStripMenuItem.Text = "Magic Wand";
-            // 
-            // huffmanToolStripMenuItem
-            // 
-            this.huffmanToolStripMenuItem.Name = "huffmanToolStripMenuItem";
-            this.huffmanToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.huffmanToolStripMenuItem.Text = "Huffman";
             // 
             // Form2_readImg
             // 

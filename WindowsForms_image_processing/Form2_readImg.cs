@@ -552,6 +552,15 @@ namespace WindowsForms_image_processing
             form_Histogram_Equalization.read_photo = myImgData;
             form_Histogram_Equalization.Show();
         }
+
+        private void magicWandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_cut form_Cut = new Form_cut();
+            form_Cut.current_mode = Form_cut.mode.Magic_Wand;
+            form_Cut.read_photo = myImgData;
+            form_Cut.size = sz;
+            form_Cut.Show();
+        }
     }
 
 }

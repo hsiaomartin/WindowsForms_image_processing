@@ -288,7 +288,7 @@ namespace WindowsForms_image_processing
             Array.Clear(max, 0, max.Length);
 
             arr_init(min, int.MaxValue);
-            Text = "Historgram Equalization";
+            
             checkBox1.Checked = true;
             checkBox2.Checked = true;
             checkBox3.Checked = true;
@@ -303,6 +303,10 @@ namespace WindowsForms_image_processing
 
         private void Form_Histogram_Equalization_Shown(object sender, EventArgs e)
         {
+            if(Histogram_mode == mode.Histogram)
+                Text = "Historgram";
+            else if(Histogram_mode == mode.Histogram_Equalization)
+                Text = "Historgram Equalization";
             histogramValue_R = new int[256];
             histogramValue_G = new int[256];
             histogramValue_B = new int[256];

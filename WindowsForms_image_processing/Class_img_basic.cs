@@ -272,17 +272,24 @@ namespace WindowsForms_image_processing
     public class myPicture
     {
         public myPixel[,] my_Pixel { get; set; }
-
+        int width, height;
+        Size picture_size;
         public myPicture(int width,int height)
         {
             my_Pixel = new myPixel[width , height];
-            
+            this.width = width;
+            this.height = height;
+            picture_size = new Size(width, height);
         }
         public myPicture(Size size)
         {
             my_Pixel = new myPixel[size.Width, size.Height];
-
+            this.width = size.Width;
+            this.height = size.Height;
+            picture_size = size;
         }
+        public int Width { get => width; set => width = value; }
+        public int Height { get => height; set => height = value; }
     }
 
 

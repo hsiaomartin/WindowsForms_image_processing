@@ -16,11 +16,12 @@ namespace WindowsForms_image_processing
         public myPixel[,] read_photo;
         public mySize size;
         public Bitmap bitmap,bitmap_cut;
-        public enum mode { Square,Circle}
-        mode current_mode;
+        public enum mode { Square,Circle,Magic_Wand}
+        public mode current_mode;
         int click_time;
         Point pa, pb;
         Graphics gMyImg, gMyImg_cut;
+        myPicture cut_Image;
         public void drawMyImgData()
         {
             //myPicture my_Picture;
@@ -51,10 +52,11 @@ namespace WindowsForms_image_processing
             //myPicture my_Picture;
             int w = rectangle.Width;
             int h = rectangle.Height;
+            cut_Image = new myPicture(w, h);
             //e.Graphics.Clear(Color.Black);
             gMyImg_cut.Clear(Color.Black);
             //my_Picture = new myPicture(w,h );
-            int count = 0;
+
             for (int Ycount = 0; Ycount < h; Ycount++)
             {
                 for (int Xcount = 0; Xcount < w; Xcount++)
@@ -62,13 +64,25 @@ namespace WindowsForms_image_processing
                     int R = read_photo[Xcount+ rectangle.X, Ycount+ rectangle.Y].R;
                     int G = read_photo[Xcount+ rectangle.X, Ycount+ rectangle.Y].G;
                     int B = read_photo[Xcount+ rectangle.X, Ycount+ rectangle.Y].B;
-
+                    cut_Image.my_Pixel[Xcount, Ycount] = new myPixel(R, G, B);
                     gMyImg_cut.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
-                    count++;
                 }
             }
+        }
 
+        public void drawCutData(myPicture cut,int x,int y)
+        {
 
+            for (int Ycount = y; Ycount < y+cut.Height; Ycount++)
+            {
+                for (int Xcount = x; Xcount < x+cut.Width; Xcount++)
+                {
+                    int R = cut_Image.my_Pixel[Xcount-x , Ycount-y ].R;
+                    int G = cut_Image.my_Pixel[Xcount-x , Ycount-y ].G;
+                    int B = cut_Image.my_Pixel[Xcount-x , Ycount-y ].B;
+                    gMyImg.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
+                }
+            }
         }
 
         public Form_cut()
@@ -96,11 +110,17 @@ namespace WindowsForms_image_processing
             pictureBox1.Image = bitmap;
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            drawMyImgData();
+            current_mode = mode.Magic_Wand;
+        }
+
         private void Form_cut_VisibleChanged(object sender, EventArgs e)
         {
             bitmap = new Bitmap(size.Width,size.Height);
             gMyImg = Graphics.FromImage(bitmap);
-            
+            button4.Enabled = false;
             drawMyImgData();
             pictureBox1.Image = bitmap;
         }
@@ -130,7 +150,7 @@ namespace WindowsForms_image_processing
                     gMyImg_cut = Graphics.FromImage(bitmap_cut);
                     drawMyImgData(rectangle);
                     pictureBox2.Image = bitmap_cut;
-
+                    button4.Enabled = true;
                 }
 
                 click_time--;
@@ -153,9 +173,15 @@ namespace WindowsForms_image_processing
                     pictureBox2.Image = CutEllipse(bitmap, rectangle, rectangle.Size);
                     gMyImg.DrawEllipse(pen, rectangle);
                     pictureBox1.Image = bitmap;
+                    button4.Enabled = true;
                 }
 
                 click_time--;
+            }
+            else if(current_mode == mode.Magic_Wand)
+            {
+                drawCutData(cut_Image, e.Location.X, e.Location.Y);
+                pictureBox1.Image = bitmap;
             }
 
         }

@@ -280,6 +280,7 @@
     <None Include="Resources\ObjectFile_16x.png" />
     <None Include="Resources\None_16x.png" />
     <None Include="Resources\Document_16x.png" />
+    <None Include="Resources\CopyItem_16x.png" />
     <Content Include="Resources\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

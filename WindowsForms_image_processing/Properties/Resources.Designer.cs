@@ -63,6 +63,16 @@ namespace WindowsForms_image_processing.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap CopyItem_16x {
+            get {
+                object obj = ResourceManager.GetObject("CopyItem_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Document_16x {
             get {
                 object obj = ResourceManager.GetObject("Document_16x", resourceCulture);
