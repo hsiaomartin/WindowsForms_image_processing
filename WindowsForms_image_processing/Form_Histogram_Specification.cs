@@ -33,6 +33,8 @@ namespace WindowsForms_image_processing
         int[] cdf_Value_B;
 
 
+
+
         int[] max;
         int[] min;
 
@@ -208,6 +210,8 @@ namespace WindowsForms_image_processing
                 cdf_Value_G[count] = total[1];
                 cdf_Value_B[count] = total[2];
 
+
+
             }
 
 
@@ -254,11 +258,20 @@ namespace WindowsForms_image_processing
                 histogram.Cdf_G[count] = total[1];
                 histogram.Cdf_B[count] = total[2];
 
-                histogram.r_R[histogram.Cdf_R[count]] = count;
-                histogram.r_G[histogram.Cdf_G[count]] = count;
-                histogram.r_B[histogram.Cdf_B[count]] = count;
+                for(int i = histogram.Cdf_R[count]- histogram.R[count]; i<   histogram.Cdf_R[count]; i++)
+                    histogram.r_R[i] = count;
+
+                for (int i = histogram.Cdf_G[count] - histogram.G[count]; i < histogram.Cdf_G[count]; i++)
+                    histogram.r_G[i] = count;
+
+                for (int i = histogram.Cdf_B[count] - histogram.B[count]; i < histogram.Cdf_B[count]; i++)
+                    histogram.r_B[i] = count;
+
+              
+                
 
 
+                Console.WriteLine(histogram.r_R[histogram.Cdf_R[count]]);
             }
         }
         public void drawHistogram()
@@ -331,6 +344,7 @@ namespace WindowsForms_image_processing
             Array.Clear(cdf_Value_R, 0, cdf_Value_R.Length);
             Array.Clear(cdf_Value_G, 0, cdf_Value_G.Length);
             Array.Clear(cdf_Value_B, 0, cdf_Value_B.Length);
+
 
             cdf_max = new int[4];
             cdf_min = new int[4];
@@ -441,7 +455,7 @@ namespace WindowsForms_image_processing
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 //openFileDialog.InitialDirectory = filePath;
-                openFileDialog.Filter = "image files (*.pcx)|*.pcx";
+                openFileDialog.Filter = "image files (*.bmp)|*.bmp|image files (*.pcx)|*.pcx|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 
@@ -520,9 +534,9 @@ namespace WindowsForms_image_processing
                     int G = read_photo[Xcount, Ycount].G;
                     int B = read_photo[Xcount, Ycount].B;
 
-                    R = target_Histogram.r_R[target_Histogram.Cdf_R[R]];
-                    G = target_Histogram.r_G[target_Histogram.Cdf_G[G]];
-                    B = target_Histogram.r_B[target_Histogram.Cdf_B[B]];
+                    R = target_Histogram.r_R[cdf_Value_R[R]];
+                    G = target_Histogram.r_G[cdf_Value_G[G]];
+                    B = target_Histogram.r_B[cdf_Value_B[B]];
 
                     pixels[Xcount, Ycount] = new myPixel(R, G, B);
 
