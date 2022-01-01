@@ -259,6 +259,7 @@ namespace WindowsForms_image_processing
             this.huffmanToolStripMenuItem.Name = "huffmanToolStripMenuItem";
             this.huffmanToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.huffmanToolStripMenuItem.Text = "Huffman";
+            this.huffmanToolStripMenuItem.Click += new System.EventHandler(this.huffmanToolStripMenuItem_Click);
             // 
             // filterToolStripMenuItem
             // 
@@ -276,14 +277,14 @@ namespace WindowsForms_image_processing
             // outlierToolStripMenuItem
             // 
             this.outlierToolStripMenuItem.Name = "outlierToolStripMenuItem";
-            this.outlierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.outlierToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.outlierToolStripMenuItem.Text = "Outlier";
             this.outlierToolStripMenuItem.Click += new System.EventHandler(this.outlierToolStripMenuItem_Click);
             // 
             // medianToolStripMenuItem
             // 
             this.medianToolStripMenuItem.Name = "medianToolStripMenuItem";
-            this.medianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.medianToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.medianToolStripMenuItem.Text = "Median";
             this.medianToolStripMenuItem.Click += new System.EventHandler(this.medianToolStripMenuItem_Click);
             // 
@@ -293,7 +294,7 @@ namespace WindowsForms_image_processing
             this.lowpassToolStripMenuItem,
             this.highpassToolStripMenuItem});
             this.lowpassHighpassToolStripMenuItem.Name = "lowpassHighpassToolStripMenuItem";
-            this.lowpassHighpassToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lowpassHighpassToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.lowpassHighpassToolStripMenuItem.Text = "Lowpass/Highpass";
             // 
             // lowpassToolStripMenuItem
@@ -313,21 +314,21 @@ namespace WindowsForms_image_processing
             // edgeCrispeningToolStripMenuItem
             // 
             this.edgeCrispeningToolStripMenuItem.Name = "edgeCrispeningToolStripMenuItem";
-            this.edgeCrispeningToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edgeCrispeningToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.edgeCrispeningToolStripMenuItem.Text = "Edge Crispening";
             this.edgeCrispeningToolStripMenuItem.Click += new System.EventHandler(this.edgeCrispeningToolStripMenuItem_Click);
             // 
             // highboostFilterToolStripMenuItem
             // 
             this.highboostFilterToolStripMenuItem.Name = "highboostFilterToolStripMenuItem";
-            this.highboostFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.highboostFilterToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.highboostFilterToolStripMenuItem.Text = "High-boost Filter";
             this.highboostFilterToolStripMenuItem.Click += new System.EventHandler(this.highboostFilterToolStripMenuItem_Click);
             // 
             // gradientToolStripMenuItem
             // 
             this.gradientToolStripMenuItem.Name = "gradientToolStripMenuItem";
-            this.gradientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gradientToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.gradientToolStripMenuItem.Text = "Gradient";
             this.gradientToolStripMenuItem.Click += new System.EventHandler(this.gradientToolStripMenuItem_Click);
             // 

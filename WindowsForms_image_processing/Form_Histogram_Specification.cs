@@ -258,7 +258,8 @@ namespace WindowsForms_image_processing
                 histogram.Cdf_G[count] = total[1];
                 histogram.Cdf_B[count] = total[2];
 
-                for(int i = histogram.Cdf_R[count]- histogram.R[count]; i<   histogram.Cdf_R[count]; i++)
+                //mapping all distribute of color 
+                for (int i = histogram.Cdf_R[count] - histogram.R[count]; i < histogram.Cdf_R[count]; i++)
                     histogram.r_R[i] = count;
 
                 for (int i = histogram.Cdf_G[count] - histogram.G[count]; i < histogram.Cdf_G[count]; i++)

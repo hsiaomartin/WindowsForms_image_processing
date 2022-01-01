@@ -570,6 +570,14 @@ namespace WindowsForms_image_processing
             form_Histogram_Specification.read_photo = myImgData;
             form_Histogram_Specification.Show();
         }
+
+        private void huffmanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Huffman form_Huffman = new Form_Huffman();
+            form_Huffman.image = new myPicture(sz.Width,sz.Height);
+            form_Huffman.image.my_Pixel = myImgData;
+            form_Huffman.Show();
+        }
     }
 
 }

@@ -120,6 +120,12 @@
     <Compile Include="Form_Histogram_Specification.Designer.cs">
       <DependentUpon>Form_Histogram_Specification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Huffman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Huffman.Designer.cs">
+      <DependentUpon>Form_Huffman.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Negative.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Histogram_Specification.resx">
       <DependentUpon>Form_Histogram_Specification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Huffman.resx">
+      <DependentUpon>Form_Huffman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Negative.resx">
       <DependentUpon>Form_Negative.cs</DependentUpon>
