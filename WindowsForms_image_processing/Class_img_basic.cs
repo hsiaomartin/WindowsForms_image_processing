@@ -172,6 +172,7 @@ namespace WindowsForms_image_processing
         public double saturation;
         public double intensity;
         public SolidBrush myColor;
+        public Color color;
         public int pixel_Value { get => Gray; set => pixel_Value= value; }
         public myPixel()
         {
@@ -185,6 +186,7 @@ namespace WindowsForms_image_processing
             B =b;
             Gray = (R+G+B)/3;
             myColor = new SolidBrush(Color.FromArgb(R, G, B));
+            color = Color.FromArgb(R, G, B);
 
             //hsi
             double[] pixel = { R, G, B };
@@ -213,6 +215,7 @@ namespace WindowsForms_image_processing
             B = b;
             Gray = (R + G + B) / 3;
             myColor = new SolidBrush(Color.FromArgb(R, G, B));
+            color = Color.FromArgb(R, G, B);
 
             //hsi
             double[] pixel = { R, G, B };
@@ -287,6 +290,32 @@ namespace WindowsForms_image_processing
             this.width = size.Width;
             this.height = size.Height;
             picture_size = size;
+        }
+
+        public void draw(Graphics g)
+        {
+            for (int Ycount = 0; Ycount < height; Ycount++)
+            {
+                for (int Xcount = 0; Xcount < width; Xcount++)
+                {
+                    int R = my_Pixel[Xcount, Ycount].R;
+                    int G = my_Pixel[Xcount, Ycount].G;
+                    int B = my_Pixel[Xcount, Ycount].B;
+
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
+                }
+            }
+        }
+        public void draw(Graphics g,string gray)
+        {
+            for (int Ycount = 0; Ycount < height; Ycount++)
+            {
+                for (int Xcount = 0; Xcount < width; Xcount++)
+                {
+                    int Gray = my_Pixel[Xcount, Ycount].Gray;
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(Gray, Gray, Gray)), Xcount, Ycount, 1, 1);
+                }
+            }
         }
         public int Width { get => width; set => width = value; }
         public int Height { get => height; set => height = value; }
