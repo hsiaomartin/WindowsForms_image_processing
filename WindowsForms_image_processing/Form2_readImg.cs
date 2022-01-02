@@ -35,6 +35,7 @@ namespace WindowsForms_image_processing
         read_Bitmap read_bitmap;
         //private string filePath = string.Empty;
         public string filePath { get;set; }
+        public myPicture my_Picture;
         public myPixel[,] myImgData;
         public mySize sz;
         Graphics gMyImg;
@@ -61,44 +62,7 @@ namespace WindowsForms_image_processing
                     gMyImg.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
 
                 }
-            }
-            
-            /*
-            int arg = 3;
-            int IOheight = h / arg;
-            int IOwidth = w / arg;
-            Console.WriteLine("("+ IOheight + ","+ IOwidth + ")");
-            count = 0;
-            String text = "";
-            for (int y1 = 0; y1 < IOheight; y1++)
-            {
-                for (int x1 = 0; x1 < IOwidth; x1++)
-                {
-                    int x = my_Picture.location[count * arg].X;
-                    int y = my_Picture.location[count * arg].Y;
-                    //反向映射坐標，不在原圖內，直接取邊界作為Pixel。
-                    //text +="("+x + ","+y + ")"+" ";
-                    //text +="("+y1 + ","+ my_Picture.location[count * arg].Y + ")"+" ";
-                    if (x > (w - 1))
-                    {
-                        x = w - 1;
-                    }
-                    if (y > (h - 1))
-                    {
-                        y = h - 1;
-                    }
-                    SolidBrush c = my_Picture.my_Pixel[x + y * w].myColor;
-                    int pos = x + y * w;
-                    
-                    gMyImg.FillRectangle(c, x1, y1, 1, 1);
-                    count++;
-                }
-                Console.WriteLine(text);
-                text = "";
-
-            }
-            */
-            //my_Picture = null;
+            }            
         }
 
         public Form2_readImg()
@@ -150,9 +114,9 @@ namespace WindowsForms_image_processing
             read_photo = null;
             read_bitmap = null;
             pictureBox2.Image = null;
+
             if(Path.GetExtension(filePath) == ".bmp")
-            {
-                
+            {                
                 current_format = img_format.bmp;
                 read_bitmap = new read_Bitmap(filePath);
                 sz = new mySize(read_bitmap.info_header.biWidth, read_bitmap.info_header.biHeight);
@@ -160,9 +124,6 @@ namespace WindowsForms_image_processing
                 gMyImg = Graphics.FromImage(bitmap);
                 myImgData = read_bitmap.myRowData;
                 drawMyImgData();
-                //Console.WriteLine("test msg");
-                // Form_show_img tooBig = new Form_show_img(read_bitmap);
-                //tooBig.Show();
             }
             else if(Path.GetExtension(filePath) == ".pcx")
             {
@@ -175,29 +136,19 @@ namespace WindowsForms_image_processing
             else
             {
                 MessageBox.Show(Path.GetExtension(filePath)+" file didn't implement.");
+                return;
             }
-            
-            
 
-            //bitmap_R = read_photo.getDecoImage_single_color(R);
-            //bitmap_G = read_photo.getDecoImage_single_color(G);
-            //bitmap_B = read_photo.getDecoImage_single_color(B);
-
-            //double[][] RGB2HSI = Class_RGB2HSI.RGB2HSI(bitmap);
-            //bitmap_Hue = Class_RGB2HSI.getHSI(RGB2HSI[0], bitmap,Class_RGB2HSI.HUE);
-            //bitmap_Intensity = Class_RGB2HSI.getHSI(RGB2HSI[1], bitmap, Class_RGB2HSI.INTENSITY);
-            //bitmap_Saturation = Class_RGB2HSI.getHSI(RGB2HSI[2], bitmap, Class_RGB2HSI.SATURATION);
+            if (myImgData != null)
+            {
+                my_Picture = new myPicture(sz.Width, sz.Height);
+                my_Picture.my_Pixel = myImgData;
+            }
 
             
             if (bitmap != null)
             {
                 set_pictureBox_size(pictureBox1, bitmap);
-
-                //set_pictureBox_size(pictureBox2, bitmap_R);
-                
-                //set_pictureBox_size(pictureBox3, bitmap_G);
-
-                // set_pictureBox_size(pictureBox4, bitmap_B);
 
                 pictureBox1.Image = bitmap;
 
@@ -358,10 +309,11 @@ namespace WindowsForms_image_processing
 
         private void enlargeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             Form_Enlarge form_Enlarge = new Form_Enlarge();
-            form_Enlarge.bitmap = bitmap;
+            form_Enlarge.myPicture = my_Picture;          
             form_Enlarge.Show();
-
+            
 
         }
 
@@ -556,6 +508,7 @@ namespace WindowsForms_image_processing
         private void magicWandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_cut form_Cut = new Form_cut();
+            form_Cut.isMagicWand = true;
             form_Cut.current_mode = Form_cut.mode.Magic_Wand;
             form_Cut.read_photo = myImgData;
             form_Cut.size = sz;
@@ -578,6 +531,13 @@ namespace WindowsForms_image_processing
             form_Huffman.image.my_Pixel = myImgData;
             form_Huffman.Show();
         }
+
+        private void zoomoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 
 }

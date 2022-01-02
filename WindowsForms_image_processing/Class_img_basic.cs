@@ -274,7 +274,7 @@ namespace WindowsForms_image_processing
 
     public class myPicture
     {
-        public myPixel[,] my_Pixel { get; set; }
+        public myPixel[,] my_Pixel;
         int width, height;
         public Size picture_size;
         public myPicture(int width,int height)

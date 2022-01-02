@@ -12,7 +12,9 @@ namespace WindowsForms_image_processing
 {
     public partial class Form_Enlarge : Form
     {
-        public Bitmap bitmap { get; set; }
+        Bitmap bitmap;
+        public myPicture myPicture;
+        Graphics g_Enlarge;
         public Form_Enlarge()
         {
             InitializeComponent();
@@ -23,7 +25,10 @@ namespace WindowsForms_image_processing
 
         private void Form_Enlarge_VisibleChanged(object sender, EventArgs e)
         {
-
+            bitmap = new Bitmap(myPicture.Width, myPicture.Height);
+            g_Enlarge = Graphics.FromImage(bitmap);
+            myPicture.draw(g_Enlarge);
+            Text = "Scaling";
             pictureBox1.Image = bitmap;
         }
         private void set_pictureBox_size(PictureBox pictureBox, Bitmap bitmap)
@@ -42,6 +47,7 @@ namespace WindowsForms_image_processing
                 double d;
                 bool valid = double.TryParse(textBox1.Text, out d);//check value is valid
                 double value = valid ? d : 1.0;
+                if (d == 0) d = 1;
                 if (radioButton1.Checked)
                 {
                     zoom_pic = zoom.zoomInImageNear(zoom_pic, value);

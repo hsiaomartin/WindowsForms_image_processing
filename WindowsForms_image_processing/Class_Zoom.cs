@@ -10,6 +10,74 @@ namespace WindowsForms_image_processing
 {
     class Class_Zoom
     {
+        //my
+        public Bitmap zoomOut_Decimation(myPicture picture,double times)
+        {
+            int width = picture.Width;
+            int height = picture.Height;
+            int IOwidth = (int)Math.Round(width * times);
+            int IOheight = (int)Math.Round(height * times);
+            Bitmap IOimage = new Bitmap(IOwidth, IOheight, PixelFormat.Format24bppRgb);
+            Graphics g = Graphics.FromImage(IOimage);
+            for (int Ycount = 0; Ycount < IOheight; Ycount++)
+            {
+                for (int Xcount = 0; Xcount < IOwidth; Xcount++)
+                {
+                    Xcount = (int)Math.Round(Xcount * (1 / times));
+                    Ycount = (int)Math.Round(Ycount * (1 / times));
+                    //反向映射坐標，不在原圖內，直接取邊界作為Pixel。
+                    if (Xcount > (width - 1))
+                    {
+                        Xcount = width - 1;
+                    }
+                    if (Ycount > (height - 1))
+                    {
+                        Ycount = height - 1;
+                    }
+                    int R = picture.my_Pixel[Xcount, Ycount].R;
+                    int G = picture.my_Pixel[Xcount, Ycount].G;
+                    int B = picture.my_Pixel[Xcount, Ycount].B;
+
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
+                }
+            }
+
+            return IOimage;
+        }
+        //my
+        public Bitmap zoomOut_Interpolation(myPicture picture, double times)
+        {
+            int width = picture.Width;
+            int height = picture.Height;
+            int IOwidth = (int)Math.Round(width * times);
+            int IOheight = (int)Math.Round(height * times);
+            Bitmap IOimage = new Bitmap(IOwidth, IOheight, PixelFormat.Format24bppRgb);
+            Graphics g = Graphics.FromImage(IOimage);
+            for (int Ycount = 0; Ycount < IOheight; Ycount++)
+            {
+                for (int Xcount = 0; Xcount < IOwidth; Xcount++)
+                {
+                    Xcount = (int)Math.Round(Xcount * (1 / times));
+                    Ycount = (int)Math.Round(Ycount * (1 / times));
+                    //反向映射坐標，不在原圖內，直接取邊界作為Pixel。
+                    if (Xcount > (width - 1))
+                    {
+                        Xcount = width - 1;
+                    }
+                    if (Ycount > (height - 1))
+                    {
+                        Ycount = height - 1;
+                    }
+                    int R = picture.my_Pixel[Xcount, Ycount].R;
+                    int G = picture.my_Pixel[Xcount, Ycount].G;
+                    int B = picture.my_Pixel[Xcount, Ycount].B;
+
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
+                }
+            }
+
+            return IOimage;
+        }
         //最鄰近值放大缩小
         public Bitmap zoomInImageNear(Bitmap Image, double times)
         {
@@ -60,7 +128,7 @@ namespace WindowsForms_image_processing
                     if (x <= (width - 1) & y <= (height - 1))
                     {
                         Color RGB = new Color();
-
+                        //(a1,b1) , (a2,b2) , (a3,b3) , (a4,b4)
                         int a1 = (int)x;
                         int b1 = (int)y;
                         int a2 = (int)Math.Ceiling(x);
@@ -80,12 +148,15 @@ namespace WindowsForms_image_processing
                             byte R1 = Image.GetPixel(a1, b1).R;
                             byte G1 = Image.GetPixel(a1, b1).G;
                             byte B1 = Image.GetPixel(a1, b1).B;
+
                             byte R2 = Image.GetPixel(a2, b2).R;
                             byte G2 = Image.GetPixel(a2, b2).G;
                             byte B2 = Image.GetPixel(a2, b2).B;
+
                             byte R3 = Image.GetPixel(a3, b3).R;
                             byte G3 = Image.GetPixel(a3, b3).G;
                             byte B3 = Image.GetPixel(a3, b3).B;
+
                             byte R4 = Image.GetPixel(a4, b4).R;
                             byte G4 = Image.GetPixel(a4, b4).G;
                             byte B4 = Image.GetPixel(a4, b4).B;
