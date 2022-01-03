@@ -537,7 +537,14 @@ namespace WindowsForms_image_processing
 
         }
 
-
+        private void pseudoMedianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Filter form_Filter = new Form_Filter();
+            form_Filter.current_mode = Form_Filter.filter_mode.pseudo_Median;
+            form_Filter.bitmap = bitmap;
+            form_Filter.read_photo = myImgData;
+            form_Filter.Show();
+        }
     }
 
 }

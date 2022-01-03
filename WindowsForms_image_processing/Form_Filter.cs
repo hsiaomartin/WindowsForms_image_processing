@@ -156,6 +156,74 @@ namespace WindowsForms_image_processing
                 }
             }
         }
+        public void MedianFilter(string cross)
+        {
+            filter_Bitmap = new Bitmap(bitmap.Width, bitmap.Height);
+
+            Graphics g_MedianFilter = Graphics.FromImage(filter_Bitmap);
+
+            int[] maskR = new int[9];
+            int[] maskG = new int[9];
+            int[] maskB = new int[9];
+            /*  0
+                1 
+            5 6 2 7 8
+                3
+                4
+             */
+
+            for (int Ycount = 0; Ycount < bitmap.Height - 2; Ycount++)
+            {
+                for (int Xcount = 0; Xcount < bitmap.Width - 2; Xcount++)
+                {
+
+                    maskR[0] = (((Ycount-2) >= 0 ) ?  read_photo[Xcount, Ycount - 2].R:0);
+                    maskR[1] = (((Ycount - 1) >= 0 ) ? read_photo[Xcount, Ycount - 1].R : 0);
+                    maskR[2] = read_photo[Xcount, Ycount].R;
+                    maskR[3] = (((Ycount + 1) < bitmap.Height - 2) ? read_photo[Xcount, Ycount + 1].R : 0);
+                    maskR[4] = (((Ycount + 2) < bitmap.Height - 2) ? read_photo[Xcount, Ycount + 2].R : 0);
+                    maskR[5] = (((Xcount - 2) >= 0) ? read_photo[Xcount - 2, Ycount].R : 0);
+                    maskR[6] = (((Xcount - 1) >= 0) ? read_photo[Xcount - 1, Ycount].R : 0);
+                    maskR[7] = (((Xcount + 1) < bitmap.Width - 2) ? read_photo[Xcount + 1, Ycount].R : 0);
+                    maskR[8] = (((Xcount + 2) < bitmap.Width - 2) ? read_photo[Xcount + 2, Ycount].R : 0);
+
+                    Array.Sort(maskR);
+                    int meanR = maskR[2];
+
+                    maskG[0] = (((Ycount-2) >= 0 ) ?   read_photo[Xcount, Ycount - 2].G:0);
+                    maskG[1] = (((Ycount - 1) >= 0) ?  read_photo[Xcount, Ycount - 1].G : 0);
+                    maskG[2] = read_photo[Xcount, Ycount].G;
+                    maskG[3] = (((Ycount + 1) < bitmap.Height - 2) ? read_photo[Xcount, Ycount + 1].G : 0);
+                    maskG[4] = (((Ycount + 2) < bitmap.Height - 2) ? read_photo[Xcount, Ycount + 2].G : 0);
+                    maskG[5] = (((Xcount - 2) >= 0) ?  read_photo[Xcount - 2, Ycount].G : 0);
+                    maskG[6] = (((Xcount - 1) >= 0) ? read_photo[Xcount - 1, Ycount].G : 0);
+                    maskG[7] = (((Xcount + 1) < bitmap.Width - 2) ? read_photo[Xcount + 1, Ycount].G : 0);
+                    maskG[8] = (((Xcount + 2) < bitmap.Width - 2) ? read_photo[Xcount + 2, Ycount].G : 0);
+
+                    Array.Sort(maskG);
+                    int meanG = maskG[2];
+
+
+                    maskB[0] =  (((Ycount-2) >= 0 ) ? read_photo[Xcount, Ycount - 2].B:0);
+                    maskB[1] = (((Ycount - 1) >= 0) ?  read_photo[Xcount, Ycount - 1].B : 0);
+                    maskB[2] = read_photo[Xcount, Ycount].B;
+                    maskB[3] = (((Ycount + 1) < bitmap.Height - 2) ? read_photo[Xcount, Ycount + 1].B : 0);
+                    maskB[4] = (((Ycount + 2) < bitmap.Height - 2) ? read_photo[Xcount, Ycount + 2].B : 0);
+                    maskB[5] = (((Xcount - 2) >= 0) ? read_photo[Xcount - 2, Ycount].B : 0);
+                    maskB[6] = (((Xcount - 1) >= 0) ? read_photo[Xcount - 1, Ycount].B : 0);
+                    maskB[7] = (((Xcount + 1) < bitmap.Width - 2) ? read_photo[Xcount + 1, Ycount].B : 0);
+                    maskB[8] = (((Xcount + 2) < bitmap.Width - 2) ? read_photo[Xcount + 2, Ycount].B : 0);
+
+                    Array.Sort(maskB);
+                    int meanB = maskB[2];
+
+
+                    g_MedianFilter.FillRectangle(new SolidBrush(Color.FromArgb(meanR, meanG, meanB)), Xcount, Ycount, 1, 1);
+
+
+                }
+            }
+        }
         /*
         M=(L+1)/2 
 
@@ -211,7 +279,7 @@ namespace WindowsForms_image_processing
                         max[0] = (min[0] > max[0] ? min[0] : max[0]);//find the maximum of minimum
                         min[1] = (max[1] < min[1] ? max[1] : min[1]);//find the minimum of maximum 
                     }
-                    Console.WriteLine("max of min"+ max[0]+ " min of max" + min[1]);
+                    Console.WriteLine("max of min : "+ max[0]+ " min of max : " + min[1]);
                     int meanR = (max[0]+min[1])/2;
 
                     maskG[0] = read_photo[Xcount, Ycount].G;
@@ -665,8 +733,18 @@ namespace WindowsForms_image_processing
             }
             else if (current_mode == filter_mode.Median)
             {
+                radioButton1.Visible = true;
+                radioButton2.Visible = true;
+                radioButton1.Checked = true;
                 Text = "Median Filter";
                 MedianFilter();
+                pictureBox1.Image = bitmap;
+                pictureBox2.Image = filter_Bitmap;
+            }
+            else if (current_mode == filter_mode.pseudo_Median)
+            {
+                Text = "Pseudo Median Filter";
+                pseudo_MedianFilter();
                 pictureBox1.Image = bitmap;
                 pictureBox2.Image = filter_Bitmap;
             }
@@ -795,6 +873,30 @@ namespace WindowsForms_image_processing
             {
                 MessageBox.Show("please select a file");
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked == true)
+            {
+                Text = "Median Filter";
+                MedianFilter();
+                pictureBox1.Image = bitmap;
+                pictureBox2.Image = filter_Bitmap;
+            }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton2.Checked == true)
+            {
+                Text = "Median Filter";
+                MedianFilter("cross");
+                pictureBox1.Image = bitmap;
+                pictureBox2.Image = filter_Bitmap;
+            }
+
         }
     }
 }

@@ -71,6 +71,7 @@ namespace WindowsForms_image_processing
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pseudoMedianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -266,6 +267,7 @@ namespace WindowsForms_image_processing
             this.filterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.outlierToolStripMenuItem,
             this.medianToolStripMenuItem,
+            this.pseudoMedianToolStripMenuItem,
             this.lowpassHighpassToolStripMenuItem,
             this.edgeCrispeningToolStripMenuItem,
             this.highboostFilterToolStripMenuItem,
@@ -419,6 +421,13 @@ namespace WindowsForms_image_processing
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
+            // pseudoMedianToolStripMenuItem
+            // 
+            this.pseudoMedianToolStripMenuItem.Name = "pseudoMedianToolStripMenuItem";
+            this.pseudoMedianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pseudoMedianToolStripMenuItem.Text = "Pseudo_Median";
+            this.pseudoMedianToolStripMenuItem.Click += new System.EventHandler(this.pseudoMedianToolStripMenuItem_Click);
+            // 
             // Form2_readImg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -493,5 +502,6 @@ namespace WindowsForms_image_processing
         private System.Windows.Forms.ToolStripMenuItem histogramEqualizationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem histogramSpecificationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem huffmanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pseudoMedianToolStripMenuItem;
     }
 }
