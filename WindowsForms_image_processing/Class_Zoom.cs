@@ -11,38 +11,41 @@ namespace WindowsForms_image_processing
     class Class_Zoom
     {
         //my
-        public Bitmap zoomOut_Decimation(myPicture picture,double times)
+        public static myPicture zoomOut_Decimation(myPixel[,] picture,Size size,double times)
         {
-            int width = picture.Width;
-            int height = picture.Height;
+            int width = size.Width;
+            int height = size.Height;
             int IOwidth = (int)Math.Round(width * times);
             int IOheight = (int)Math.Round(height * times);
-            Bitmap IOimage = new Bitmap(IOwidth, IOheight, PixelFormat.Format24bppRgb);
-            Graphics g = Graphics.FromImage(IOimage);
+
+            myPicture IOpicture = new myPicture(IOwidth, IOheight);
+            //Bitmap IOimage = new Bitmap(IOwidth, IOheight, PixelFormat.Format24bppRgb);
+            //Graphics g = Graphics.FromImage(IOimage);
             for (int Ycount = 0; Ycount < IOheight; Ycount++)
             {
                 for (int Xcount = 0; Xcount < IOwidth; Xcount++)
                 {
-                    Xcount = (int)Math.Round(Xcount * (1 / times));
-                    Ycount = (int)Math.Round(Ycount * (1 / times));
+                    int x = (int)Math.Round(Xcount * (1 / times));
+                    int y = (int)Math.Round(Ycount * (1 / times));
                     //反向映射坐標，不在原圖內，直接取邊界作為Pixel。
-                    if (Xcount > (width - 1))
+                    if (x > (width - 1))
                     {
-                        Xcount = width - 1;
+                        x = width - 1;
                     }
-                    if (Ycount > (height - 1))
+                    if (y > (height - 1))
                     {
-                        Ycount = height - 1;
+                        y = height - 1;
                     }
-                    int R = picture.my_Pixel[Xcount, Ycount].R;
-                    int G = picture.my_Pixel[Xcount, Ycount].G;
-                    int B = picture.my_Pixel[Xcount, Ycount].B;
+                    int R = picture[x, y].R;
+                    int G = picture[x, y].G;
+                    int B = picture[x, y].B;
+                    IOpicture.my_Pixel[Xcount, Ycount] = new myPixel(R,G,B);
 
-                    g.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
+                    //g.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
                 }
             }
 
-            return IOimage;
+            return IOpicture;
         }
         //my
         public Bitmap zoomOut_Interpolation(myPicture picture, double times)

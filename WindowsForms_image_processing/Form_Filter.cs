@@ -521,7 +521,7 @@ namespace WindowsForms_image_processing
                     maskR[7] = kernel_2[7] * read_photo[(Xcount + 2), Ycount + 1].R;
                     maskR[8] = kernel_2[8] * read_photo[(Xcount + 2), Ycount + 2].R;
                     int meanR_Y = (maskR[0] + maskR[1] + maskR[2] + maskR[3] + maskR[4] + maskR[5] + maskR[6] + maskR[7] + maskR[8]) / sumOfKernel;
-                    int meanR = meanR_X + meanR_Y;
+                    int meanR = Math.Abs(meanR_X) + Math.Abs(meanR_Y);
                     //meanR+= read_photo[Xcount, Ycount].R;
                     meanR = meanR > 0 ? (meanR > 255 ? 255 : meanR) : 0;
 
@@ -546,7 +546,7 @@ namespace WindowsForms_image_processing
                     maskG[7] = kernel_2[7] * read_photo[(Xcount + 2), Ycount + 1].G;
                     maskG[8] = kernel_2[8] * read_photo[(Xcount + 2), Ycount + 2].G;
                     int meanG_Y = (maskG[0] + maskG[1] + maskG[2] + maskG[3] + maskG[4] + maskG[5] + maskG[6] + maskG[7] + maskG[8]) / sumOfKernel;
-                    int meanG = meanG_X + meanG_Y;
+                    int meanG = Math.Abs(meanG_X) + Math.Abs(meanG_Y);
                     //meanG += read_photo[Xcount, Ycount].G;
                     meanG = meanG > 0 ? (meanG > 255 ? 255 : meanG) : 0;
 
@@ -572,7 +572,7 @@ namespace WindowsForms_image_processing
                     maskB[7] = kernel_2[7] * read_photo[(Xcount + 2), Ycount + 1].B;
                     maskB[8] = kernel_2[8] * read_photo[(Xcount + 2), Ycount + 2].B;
                     int meanB_Y = (maskB[0] + maskB[1] + maskB[2] + maskB[3] + maskB[4] + maskB[5] + maskB[6] + maskB[7] + maskB[8]) / sumOfKernel;
-                    int meanB = meanB_X + meanB_Y;
+                    int meanB = Math.Abs(meanB_X) + Math.Abs(meanB_Y);
                     //meanB+= read_photo[Xcount, Ycount].B;
                     meanB = meanB > 0 ? (meanB > 255 ? 255 : meanB) : 0;
 
@@ -719,6 +719,8 @@ namespace WindowsForms_image_processing
 
             groupBox1.Visible = false;
             groupBox2.Visible = false;
+            groupBox3.Visible = false;
+            button3.Visible = false;
             button2.Visible = false;
             label4.Visible = false;
             comboBox1.Visible = false;
@@ -781,6 +783,8 @@ namespace WindowsForms_image_processing
             }
             else if (current_mode == filter_mode.Gradient)
             {
+                groupBox2.Visible = true;
+                groupBox3.Visible = true;
                 label4.Visible = true;
                 comboBox1.Visible = true;
                 comboBox1.Items.Add("Roberts Filter");
@@ -839,7 +843,7 @@ namespace WindowsForms_image_processing
                 {
                     Text = "Gradient Roberts Filter";
                     kernel = new int[] { 1,0,0,0,-1,0,0,0,0};
-                    kernel_2 = new int[] { 0,1,0,-1,0,0,0,0,0 };
+                    kernel_2 = new int[] { 0,-1,0,1,0,0,0,0,0 };
                     Gradient_Filter();
 
 
@@ -849,8 +853,8 @@ namespace WindowsForms_image_processing
                 else if (comboBox1.SelectedIndex == 1)
                 {
                     Text = "Gradient Sobel Filter";
-                    kernel = new int[] { 1,2,1,0,0,0,-1,-2,-1 };
-                    kernel_2 = new int[] {1,0,-1,2,0,-2,1,0,-1};
+                    kernel = new int[] {-1,0,1,-2,0,2,-1,0,1};
+                    kernel_2 = new int[] { 1,2,1,0,0,0,-1,-2,-1 };
                     Gradient_Filter();
 
 
@@ -860,8 +864,8 @@ namespace WindowsForms_image_processing
                 else if (comboBox1.SelectedIndex == 2)
                 {
                     Text = "Gradient Prewitt Filter";
-                    kernel = new int[] { -1, -1, -1, 0, 0, 0, 1, 1, 1 };
-                    kernel_2 = new int[] { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
+                    kernel = new int[] { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
+                    kernel_2 = new int[] { 1, 1, 1, 0, 0, 0, -1, -1, -1 };
                     Gradient_Filter();
 
                     pictureBox1.Image = bitmap;
@@ -873,6 +877,25 @@ namespace WindowsForms_image_processing
             {
                 MessageBox.Show("please select a file");
             }
+            textBox2.Text = kernel[0].ToString();
+            textBox3.Text = kernel[1].ToString();
+            textBox4.Text = kernel[2].ToString();
+            textBox5.Text = kernel[3].ToString();
+            textBox6.Text = kernel[4].ToString();
+            textBox7.Text = kernel[5].ToString();
+            textBox8.Text = kernel[6].ToString();
+            textBox9.Text = kernel[7].ToString();
+            textBox10.Text = kernel[8].ToString();
+
+            textBox_k2_0.Text = kernel_2[0].ToString();
+            textBox_k2_1.Text = kernel_2[1].ToString();
+            textBox_k2_2.Text = kernel_2[2].ToString();
+            textBox_k2_3.Text = kernel_2[3].ToString();
+            textBox_k2_4.Text = kernel_2[4].ToString();
+            textBox_k2_5.Text = kernel_2[5].ToString();
+            textBox_k2_6.Text = kernel_2[6].ToString();
+            textBox_k2_7.Text = kernel_2[7].ToString();
+            textBox_k2_8.Text = kernel_2[8].ToString();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

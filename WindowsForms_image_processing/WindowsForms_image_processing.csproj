@@ -78,6 +78,12 @@
     <Compile Include="Form_Brightness.Designer.cs">
       <DependentUpon>Form_Brightness.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Connected_Component.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Connected_Component.Designer.cs">
+      <DependentUpon>Form_Connected_Component.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Constrast_Stretching.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Brightness.resx">
       <DependentUpon>Form_Brightness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Connected_Component.resx">
+      <DependentUpon>Form_Connected_Component.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Constrast_Stretching.resx">
       <DependentUpon>Form_Constrast_Stretching.cs</DependentUpon>

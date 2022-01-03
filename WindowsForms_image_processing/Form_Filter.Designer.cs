@@ -53,10 +53,22 @@ namespace WindowsForms_image_processing
             this.label4 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox_k2_8 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_7 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_6 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_5 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_4 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_3 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_2 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_1 = new System.Windows.Forms.TextBox();
+            this.textBox_k2_0 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -268,11 +280,103 @@ namespace WindowsForms_image_processing
             this.radioButton2.Visible = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.textBox_k2_8);
+            this.groupBox3.Controls.Add(this.textBox_k2_7);
+            this.groupBox3.Controls.Add(this.textBox_k2_6);
+            this.groupBox3.Controls.Add(this.textBox_k2_5);
+            this.groupBox3.Controls.Add(this.textBox_k2_4);
+            this.groupBox3.Controls.Add(this.textBox_k2_3);
+            this.groupBox3.Controls.Add(this.textBox_k2_2);
+            this.groupBox3.Controls.Add(this.textBox_k2_1);
+            this.groupBox3.Controls.Add(this.textBox_k2_0);
+            this.groupBox3.Location = new System.Drawing.Point(144, 492);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(126, 131);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Kernel";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(24, 101);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(81, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "OK";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox_k2_8
+            // 
+            this.textBox_k2_8.Location = new System.Drawing.Point(82, 77);
+            this.textBox_k2_8.Name = "textBox_k2_8";
+            this.textBox_k2_8.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_8.TabIndex = 8;
+            // 
+            // textBox_k2_7
+            // 
+            this.textBox_k2_7.Location = new System.Drawing.Point(53, 77);
+            this.textBox_k2_7.Name = "textBox_k2_7";
+            this.textBox_k2_7.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_7.TabIndex = 7;
+            // 
+            // textBox_k2_6
+            // 
+            this.textBox_k2_6.Location = new System.Drawing.Point(24, 77);
+            this.textBox_k2_6.Name = "textBox_k2_6";
+            this.textBox_k2_6.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_6.TabIndex = 6;
+            // 
+            // textBox_k2_5
+            // 
+            this.textBox_k2_5.Location = new System.Drawing.Point(82, 49);
+            this.textBox_k2_5.Name = "textBox_k2_5";
+            this.textBox_k2_5.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_5.TabIndex = 5;
+            // 
+            // textBox_k2_4
+            // 
+            this.textBox_k2_4.Location = new System.Drawing.Point(53, 49);
+            this.textBox_k2_4.Name = "textBox_k2_4";
+            this.textBox_k2_4.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_4.TabIndex = 4;
+            // 
+            // textBox_k2_3
+            // 
+            this.textBox_k2_3.Location = new System.Drawing.Point(24, 49);
+            this.textBox_k2_3.Name = "textBox_k2_3";
+            this.textBox_k2_3.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_3.TabIndex = 3;
+            // 
+            // textBox_k2_2
+            // 
+            this.textBox_k2_2.Location = new System.Drawing.Point(82, 21);
+            this.textBox_k2_2.Name = "textBox_k2_2";
+            this.textBox_k2_2.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_2.TabIndex = 2;
+            // 
+            // textBox_k2_1
+            // 
+            this.textBox_k2_1.Location = new System.Drawing.Point(53, 21);
+            this.textBox_k2_1.Name = "textBox_k2_1";
+            this.textBox_k2_1.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_1.TabIndex = 1;
+            // 
+            // textBox_k2_0
+            // 
+            this.textBox_k2_0.Location = new System.Drawing.Point(24, 21);
+            this.textBox_k2_0.Name = "textBox_k2_0";
+            this.textBox_k2_0.Size = new System.Drawing.Size(23, 22);
+            this.textBox_k2_0.TabIndex = 0;
+            // 
             // Form_Filter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 635);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label4);
@@ -293,6 +397,8 @@ namespace WindowsForms_image_processing
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +429,16 @@ namespace WindowsForms_image_processing
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox_k2_8;
+        private System.Windows.Forms.TextBox textBox_k2_7;
+        private System.Windows.Forms.TextBox textBox_k2_6;
+        private System.Windows.Forms.TextBox textBox_k2_5;
+        private System.Windows.Forms.TextBox textBox_k2_4;
+        private System.Windows.Forms.TextBox textBox_k2_3;
+        private System.Windows.Forms.TextBox textBox_k2_2;
+        private System.Windows.Forms.TextBox textBox_k2_1;
+        private System.Windows.Forms.TextBox textBox_k2_0;
     }
 }

@@ -38,28 +38,29 @@ namespace WindowsForms_image_processing
         public myPicture my_Picture;
         public myPixel[,] myImgData;
         public mySize sz;
+        private bool isBig = false;
         Graphics gMyImg;
-        public void drawMyImgData()
+        public void drawMyImgData(myPicture picture,Graphics g)
         {
             //myPicture my_Picture;
-            int w = read_bitmap.info_header.biWidth;
-            int h = read_bitmap.info_header.biHeight;
+            int w = picture.Width;
+            int h = picture.Height;
             //e.Graphics.Clear(Color.Black);
-            gMyImg.Clear(Color.Black);
+            g.Clear(Color.Black);
             //my_Picture = new myPicture(w,h );
 
             for (int Ycount = h - 1; Ycount >= 0; Ycount--)
             {
                 for (int Xcount = 0; Xcount < w; Xcount++)
                 {
-                    int R = read_bitmap.myRowData[Xcount, Ycount].R;
-                    int G = read_bitmap.myRowData[Xcount, Ycount].G;
-                    int B = read_bitmap.myRowData[Xcount, Ycount].B;
+                    int R = picture.my_Pixel[Xcount, Ycount].R;
+                    int G = picture.my_Pixel[Xcount, Ycount].G;
+                    int B = picture.my_Pixel[Xcount, Ycount].B;
 
                     //my_Picture.my_Pixel[count] = new myPixel(read_bitmap.myRowData[count].R, read_bitmap.myRowData[count].G, read_bitmap.myRowData[count].B);
                     //my_Picture.location[count] = new Point(Xcount, h-Ycount-1);
                     //Console.WriteLine("(" + my_Picture.location[count].X + "," + my_Picture.location[count].Y + ")");
-                    gMyImg.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(R, G, B)), Xcount, Ycount, 1, 1);
 
                 }
             }            
@@ -120,10 +121,22 @@ namespace WindowsForms_image_processing
                 current_format = img_format.bmp;
                 read_bitmap = new read_Bitmap(filePath);
                 sz = new mySize(read_bitmap.info_header.biWidth, read_bitmap.info_header.biHeight);
-                bitmap = new Bitmap(read_bitmap.info_header.biWidth, read_bitmap.info_header.biHeight);
-                gMyImg = Graphics.FromImage(bitmap);
                 myImgData = read_bitmap.myRowData;
-                drawMyImgData();
+                if(read_bitmap.info_header.biWidth>512 || read_bitmap.info_header.biHeight > 512)
+                {                
+                    my_Picture = Class_Zoom.zoomOut_Decimation(myImgData, new Size(sz.Width,sz.Height), 256.0/ read_bitmap.info_header.biWidth);
+                    myImgData = my_Picture.my_Pixel;
+                    sz = new mySize(my_Picture.Width, my_Picture.Height);
+                    isBig = true;
+                }
+                else
+                {
+                    my_Picture = new myPicture(sz.Width, sz.Height);
+                    my_Picture.my_Pixel = myImgData;
+                }
+                bitmap = new Bitmap(sz.Width, sz.Height);
+                gMyImg = Graphics.FromImage(bitmap);
+                drawMyImgData(my_Picture,gMyImg);
             }
             else if(Path.GetExtension(filePath) == ".pcx")
             {
@@ -139,7 +152,7 @@ namespace WindowsForms_image_processing
                 return;
             }
 
-            if (myImgData != null)
+            if (myImgData != null && !isBig)
             {
                 my_Picture = new myPicture(sz.Width, sz.Height);
                 my_Picture.my_Pixel = myImgData;
@@ -544,6 +557,14 @@ namespace WindowsForms_image_processing
             form_Filter.bitmap = bitmap;
             form_Filter.read_photo = myImgData;
             form_Filter.Show();
+        }
+
+        private void connectedComponentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Connected_Component form__Connected_Component = new Form_Connected_Component();
+            form__Connected_Component.image = new myPicture(sz.Width, sz.Height);
+            form__Connected_Component.image.my_Pixel = myImgData;
+            form__Connected_Component.Show();
         }
     }
 

@@ -67,6 +67,9 @@ namespace WindowsForms_image_processing
         Bitmap next_Bitmap_Rebuild;
         string current_PSNR = "";
 
+        //for show rebuild 
+        Bitmap show_Rebuild;
+
         private bool _ok = true;
         bool isPause=false;
         bool isStep = false;
@@ -86,7 +89,7 @@ namespace WindowsForms_image_processing
             comboBox3.Items.Add("MAD");
             comboBox3.Items.Add("MSD");
             comboBox3.Items.Add("PDC");
-            comboBox3.Items.Add("IP");
+            //comboBox3.Items.Add("IP");
             button_file.Visible = false;
             continuous_mode = true;
             checkBox1.Visible = false;
@@ -494,6 +497,8 @@ namespace WindowsForms_image_processing
                         double sum_square = 0.0;//mean square difference
                         int ord_sum = 0;
 
+                        int[] ip_sum_Row = new int[16];
+                        Array.Clear(ip_sum_Row, 0, ip_sum_Row.Length);
                         for (int Ycount = 0; Ycount < 8; Ycount++)
                         {
                             for (int Xcount = 0; Xcount < 8; Xcount++)
@@ -506,6 +511,8 @@ namespace WindowsForms_image_processing
                                 sum_abs += Math.Abs(diff);//MAD                                
                                 sum_square += (diff) * (diff);//MSD
                                 if (Math.Abs(diff) < 1) ord_sum++;//PDC
+
+                                //ip_sum_Row[Ycount] += my_Data[Xcount + X, Ycount + Y].Gray;//a(1~8) b(1~8)
                             }
                         }
 
@@ -672,7 +679,8 @@ namespace WindowsForms_image_processing
                 else if (isDecode == 3 && video_mode == mode.player)
                 {
                     pictureBox1.Image = new Bitmap(second_img);
-                    pictureBox2.Image = new Bitmap(bitmap_Rebuild);
+                    //pictureBox2.Image = new Bitmap(bitmap_Rebuild);
+                    pictureBox2.Image = new Bitmap(show_Rebuild);
                     pictureBox3.Image = bitmap_motion_vector;
                     //pictureBox6.Image = bitmap_Rebuild;
 
@@ -682,7 +690,8 @@ namespace WindowsForms_image_processing
                     label8.Text = "( " + continue_frame + " / " + (total_frame+1) + " ) " ;
 
                     comboBox3.SelectedIndex = (int)current_Criteria;
-                    mySize msize = new mySize(bitmap_Rebuild.Width, bitmap_Rebuild.Height);
+                    //mySize msize = new mySize(bitmap_Rebuild.Width, bitmap_Rebuild.Height);
+                    mySize msize = new mySize(show_Rebuild.Width, show_Rebuild.Height);
                     string psnr = Class_img_basic.PSNR(my_Data_current, my_Rebuild_Data, msize);
                     label5.Text = "PSNR : " + psnr;
 
@@ -894,7 +903,7 @@ namespace WindowsForms_image_processing
             }
 
 
-
+            show_Rebuild = new Bitmap(bitmap_Rebuild);
             isDecode = 3;
             backgroundWorker1.ReportProgress(isDecode);
             while (isStep_2) ;
