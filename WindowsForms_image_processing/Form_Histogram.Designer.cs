@@ -33,6 +33,7 @@ namespace WindowsForms_image_processing
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Histogram));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -92,6 +93,7 @@ namespace WindowsForms_image_processing
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Histogram";
             this.Text = "Form_Histogram";
             this.Shown += new System.EventHandler(this.Form_Histogram_Shown);

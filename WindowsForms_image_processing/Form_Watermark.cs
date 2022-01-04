@@ -101,6 +101,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Watermark_Load(object sender, EventArgs e)
         {
+            Text = "Image Watermark";
             pictureBox1.Image = bitmap;
             label1.Location = new Point(label1.Location.X , pictureBox1.Height + pictureBox1.Location.Y);
             radioButton9.Checked = true;

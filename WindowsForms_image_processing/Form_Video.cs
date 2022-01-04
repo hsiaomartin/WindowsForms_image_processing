@@ -94,6 +94,7 @@ namespace WindowsForms_image_processing
             continuous_mode = true;
             checkBox1.Visible = false;
             checkBox2.Visible = false;
+            checkBox3.Visible = false;
         }
 
         private void Form_Video_Shown(object sender, EventArgs e)
@@ -135,6 +136,7 @@ namespace WindowsForms_image_processing
             else if(video_mode == mode.player)
             {
                 this.Text = "Video player";
+                checkBox3.Visible = true;
                 pictureBox4.Visible = false;
                 pictureBox5.Visible = false;
                 comboBox1.Visible = false;

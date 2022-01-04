@@ -263,6 +263,7 @@ namespace WindowsForms_image_processing
         }
         private void Form_Connected_Component_Shown(object sender, EventArgs e)
         {
+            Text = "Connected Component";
             connect_Table = new int[image.Width, image.Height];
             Array.Clear(connect_Table, 0, connect_Table.Length);
             bitmap = new Bitmap(image.Width, image.Height);

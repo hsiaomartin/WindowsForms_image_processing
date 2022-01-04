@@ -109,6 +109,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Histogram_Shown(object sender, EventArgs e)
         {
+            Text = "Image Color Histogram";
             histogramValue_R = new int[256];
             histogramValue_G = new int[256];
             histogramValue_B = new int[256];

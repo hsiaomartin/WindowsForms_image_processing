@@ -103,6 +103,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Thresholding_Shown(object sender, EventArgs e)
         {
+            Text = "Image Thresholding";
             grayImage = new Bitmap(bitmap.Width, bitmap.Height);
             g_grayImage = Graphics.FromImage(grayImage);
             drawGrayImage();

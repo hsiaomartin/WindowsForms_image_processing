@@ -30,6 +30,7 @@ namespace WindowsForms_image_processing
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_bouncy_ball));
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
@@ -53,6 +54,7 @@ namespace WindowsForms_image_processing
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 536);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_bouncy_ball";
             this.Text = "Form_bouncy_ball";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_bouncy_ball_FormClosed);

@@ -308,6 +308,15 @@
     <None Include="Resources\Media_16x.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StackRight_16x.png" />
+    <None Include="Resources\TransparentBackground_16x.png" />
+    <None Include="Resources\ImportTheme_16x.png" />
+    <None Include="Resources\MagicWand_16x.png" />
+    <None Include="Resources\NeuralNetwork_16x.png" />
+    <None Include="Resources\PropertyBrushGroup_16x.png" />
+    <None Include="Resources\RotateArrow_16x.png" />
+    <None Include="Resources\StackColumnDashLineChart_16x.png" />
+    <None Include="Resources\Zoom_16x.png" />
     <None Include="Resources\NextFrameArrow_16x.png" />
     <None Include="Resources\Pause_16x.png" />
     <None Include="Resources\GlyphRight_16x.png" />
@@ -317,6 +326,14 @@
     <None Include="Resources\None_16x.png" />
     <None Include="Resources\Document_16x.png" />
     <None Include="Resources\CopyItem_16x.png" />
+    <None Include="Resources\DIVTag_16x.png" />
+    <None Include="Resources\Cut_16x.png" />
+    <None Include="Resources\Create_16x.png" />
+    <None Include="Resources\HighContrast_16x.png" />
+    <None Include="Resources\CheckerboardSquare_10x_16x.png" />
+    <None Include="Resources\BreakpointEnabled_16x.png" />
+    <None Include="Resources\BooleanData_16x.png" />
+    <None Include="Resources\Assembly_16x.png" />
     <Content Include="Resources\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

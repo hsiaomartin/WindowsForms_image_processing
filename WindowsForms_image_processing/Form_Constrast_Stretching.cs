@@ -222,6 +222,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Constrast_Stretching_Shown(object sender, EventArgs e)
         {
+            Text = "Image Constrast Stretching";
             stretchingImage = new Bitmap(bitmap.Width, bitmap.Height);
             g_stretching = Graphics.FromImage(stretchingImage);
 

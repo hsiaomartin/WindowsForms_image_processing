@@ -29,6 +29,7 @@ namespace WindowsForms_image_processing
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Enlarge));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@ namespace WindowsForms_image_processing
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Enlarge";
             this.Text = "Form_Enlarge";
             this.VisibleChanged += new System.EventHandler(this.Form_Enlarge_VisibleChanged);

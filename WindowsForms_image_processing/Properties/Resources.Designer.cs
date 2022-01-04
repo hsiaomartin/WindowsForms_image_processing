@@ -63,9 +63,79 @@ namespace WindowsForms_image_processing.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap Assembly_16x {
+            get {
+                object obj = ResourceManager.GetObject("Assembly_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap BooleanData_16x {
+            get {
+                object obj = ResourceManager.GetObject("BooleanData_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap BreakpointEnabled_16x {
+            get {
+                object obj = ResourceManager.GetObject("BreakpointEnabled_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckerboardSquare_10x_16x {
+            get {
+                object obj = ResourceManager.GetObject("CheckerboardSquare_10x_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap CopyItem_16x {
             get {
                 object obj = ResourceManager.GetObject("CopyItem_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Create_16x {
+            get {
+                object obj = ResourceManager.GetObject("Create_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Cut_16x {
+            get {
+                object obj = ResourceManager.GetObject("Cut_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap DIVTag_16x {
+            get {
+                object obj = ResourceManager.GetObject("DIVTag_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +183,36 @@ namespace WindowsForms_image_processing.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap HighContrast_16x {
+            get {
+                object obj = ResourceManager.GetObject("HighContrast_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ImportTheme_16x {
+            get {
+                object obj = ResourceManager.GetObject("ImportTheme_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap MagicWand_16x {
+            get {
+                object obj = ResourceManager.GetObject("MagicWand_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Media_16x {
             get {
                 object obj = ResourceManager.GetObject("Media_16x", resourceCulture);
@@ -126,6 +226,16 @@ namespace WindowsForms_image_processing.Properties {
         internal static System.Drawing.Bitmap Member_16x {
             get {
                 object obj = ResourceManager.GetObject("Member_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap NeuralNetwork_16x {
+            get {
+                object obj = ResourceManager.GetObject("NeuralNetwork_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +296,66 @@ namespace WindowsForms_image_processing.Properties {
         internal static System.Drawing.Bitmap PlayVideo_16x {
             get {
                 object obj = ResourceManager.GetObject("PlayVideo_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PropertyBrushGroup_16x {
+            get {
+                object obj = ResourceManager.GetObject("PropertyBrushGroup_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap RotateArrow_16x {
+            get {
+                object obj = ResourceManager.GetObject("RotateArrow_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap StackColumnDashLineChart_16x {
+            get {
+                object obj = ResourceManager.GetObject("StackColumnDashLineChart_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap StackRight_16x {
+            get {
+                object obj = ResourceManager.GetObject("StackRight_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap TransparentBackground_16x {
+            get {
+                object obj = ResourceManager.GetObject("TransparentBackground_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Zoom_16x {
+            get {
+                object obj = ResourceManager.GetObject("Zoom_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

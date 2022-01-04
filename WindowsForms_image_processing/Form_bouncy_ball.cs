@@ -28,6 +28,7 @@ namespace WindowsForms_image_processing
             myBalls = new List<Class_bouncy_ball>();
             timer1.Start();
             pen_arrow.StartCap = LineCap.ArrowAnchor;//r
+            Text = "Bouncy Ball";
         }
         public void myDrawPoint(Graphics graphics, List<Class_bouncy_ball> balls)
         {

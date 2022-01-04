@@ -52,6 +52,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Brightness_Shown(object sender, EventArgs e)
         {
+            Text = "Image Brightness";
             pictureBox1.Image = bitmap;
             bitmap_Bright = new Bitmap(bitmap.Width, bitmap.Height);
             gBright = Graphics.FromImage(bitmap_Bright);

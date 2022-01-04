@@ -120,7 +120,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Transparency_Shown(object sender, EventArgs e)
         {
-
+            Text = "Image Transparency";
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

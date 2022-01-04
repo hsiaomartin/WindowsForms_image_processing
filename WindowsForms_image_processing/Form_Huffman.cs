@@ -78,6 +78,7 @@ namespace WindowsForms_image_processing
         }
         private void Form_Huffman_Shown(object sender, EventArgs e)
         {
+            Text = "Huffman code";
             Bitmap bitmap = new Bitmap(image.Width, image.Height);
             Graphics graphics = Graphics.FromImage(bitmap);
             image.draw(graphics);

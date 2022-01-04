@@ -31,6 +31,7 @@ namespace WindowsForms_image_processing
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Huffman));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -77,6 +78,7 @@ namespace WindowsForms_image_processing
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Huffman";
             this.Text = "Form_Huffman";
             this.Shown += new System.EventHandler(this.Form_Huffman_Shown);

@@ -29,6 +29,7 @@ namespace WindowsForms_image_processing
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_rotate));
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -45,7 +46,7 @@ namespace WindowsForms_image_processing
             this.trackBar1.Location = new System.Drawing.Point(12, 12);
             this.trackBar1.Maximum = 36;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(695, 45);
+            this.trackBar1.Size = new System.Drawing.Size(867, 45);
             this.trackBar1.TabIndex = 0;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
@@ -59,7 +60,7 @@ namespace WindowsForms_image_processing
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(366, 95);
+            this.pictureBox2.Location = new System.Drawing.Point(537, 95);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(341, 333);
             this.pictureBox2.TabIndex = 2;
@@ -68,7 +69,7 @@ namespace WindowsForms_image_processing
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 498);
+            this.label1.Location = new System.Drawing.Point(12, 431);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 12);
             this.label1.TabIndex = 3;
@@ -77,7 +78,7 @@ namespace WindowsForms_image_processing
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(535, 498);
+            this.label2.Location = new System.Drawing.Point(535, 431);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 12);
             this.label2.TabIndex = 4;
@@ -87,12 +88,13 @@ namespace WindowsForms_image_processing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 530);
+            this.ClientSize = new System.Drawing.Size(891, 625);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.trackBar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_rotate";
             this.Text = "Form2_rotate";
             this.VisibleChanged += new System.EventHandler(this.Form_rotate_VisibleChanged);

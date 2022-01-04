@@ -70,7 +70,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Slicing_Shown(object sender, EventArgs e)
         {
-
+            Text = "Image Slicing";
             slicing(straight);
             pictureBox1.Image = bitmap_Slicing[0];
             pictureBox2.Image = bitmap_Slicing[1];

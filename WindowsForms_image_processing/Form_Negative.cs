@@ -26,6 +26,7 @@ namespace WindowsForms_image_processing
 
         private void Form_Negative_Shown(object sender, EventArgs e)
         {
+            Text = "Image Color Negative";
             bitmap_Negative = new Bitmap(bitmap.Width, bitmap.Height);
             bitmap_Gray_Negative = new Bitmap(bitmap.Width, bitmap.Height);
 
@@ -56,9 +57,12 @@ namespace WindowsForms_image_processing
 
                 }
             }
-
+            pictureBox1.Size = new Size(bitmap_Negative.Size.Width, bitmap_Negative.Size.Height);
             pictureBox1.Image = bitmap_Negative;
+            label1.Location = new Point(pictureBox1.Location.X,pictureBox1.Location.Y + pictureBox1.Height);
+            pictureBox2.Size = new Size(bitmap_Negative.Size.Width, bitmap_Negative.Size.Height);
             pictureBox2.Image = bitmap_Gray_Negative;
+            label2.Location = new Point(pictureBox2.Location.X, pictureBox2.Location.Y + pictureBox2.Height);
         }
     }
 }

@@ -38,8 +38,8 @@ namespace WindowsForms_image_processing
             this.encodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.videoPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_form_container = new System.Windows.Forms.Panel();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_form_container = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,15 +96,16 @@ namespace WindowsForms_image_processing
             // 
             // encodeToolStripMenuItem
             // 
+            this.encodeToolStripMenuItem.Image = global::WindowsForms_image_processing.Properties.Resources.BreakpointEnabled_16x;
             this.encodeToolStripMenuItem.Name = "encodeToolStripMenuItem";
-            this.encodeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.encodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.encodeToolStripMenuItem.Text = "Encode";
             this.encodeToolStripMenuItem.Click += new System.EventHandler(this.encodeToolStripMenuItem_Click);
             // 
             // decodeToolStripMenuItem
             // 
             this.decodeToolStripMenuItem.Name = "decodeToolStripMenuItem";
-            this.decodeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.decodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.decodeToolStripMenuItem.Text = "Decode";
             this.decodeToolStripMenuItem.Click += new System.EventHandler(this.decodeToolStripMenuItem_Click);
             // 
@@ -112,16 +113,9 @@ namespace WindowsForms_image_processing
             // 
             this.videoPlayerToolStripMenuItem.Image = global::WindowsForms_image_processing.Properties.Resources.PlayVideo_16x;
             this.videoPlayerToolStripMenuItem.Name = "videoPlayerToolStripMenuItem";
-            this.videoPlayerToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.videoPlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.videoPlayerToolStripMenuItem.Text = "Video player";
             this.videoPlayerToolStripMenuItem.Click += new System.EventHandler(this.videoPlayerToolStripMenuItem_Click);
-            // 
-            // panel_form_container
-            // 
-            this.panel_form_container.Location = new System.Drawing.Point(0, 27);
-            this.panel_form_container.Name = "panel_form_container";
-            this.panel_form_container.Size = new System.Drawing.Size(827, 605);
-            this.panel_form_container.TabIndex = 1;
             // 
             // projectToolStripMenuItem
             // 
@@ -130,6 +124,13 @@ namespace WindowsForms_image_processing
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.projectToolStripMenuItem.Text = "Project";
             this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
+            // 
+            // panel_form_container
+            // 
+            this.panel_form_container.Location = new System.Drawing.Point(0, 27);
+            this.panel_form_container.Name = "panel_form_container";
+            this.panel_form_container.Size = new System.Drawing.Size(827, 605);
+            this.panel_form_container.TabIndex = 1;
             // 
             // Form1
             // 
