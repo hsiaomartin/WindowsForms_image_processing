@@ -138,6 +138,12 @@
     <Compile Include="Form_Negative.Designer.cs">
       <DependentUpon>Form_Negative.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Pattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Pattern.Designer.cs">
+      <DependentUpon>Form_Pattern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_RGBHSI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Negative.resx">
       <DependentUpon>Form_Negative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Pattern.resx">
+      <DependentUpon>Form_Pattern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_RGBHSI.resx">
       <DependentUpon>Form_RGBHSI.cs</DependentUpon>

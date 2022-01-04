@@ -69,7 +69,7 @@ namespace WindowsForms_image_processing
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var fileContent = string.Empty;
+            //var fileContent = string.Empty;
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -84,12 +84,12 @@ namespace WindowsForms_image_processing
                     filePath = openFileDialog.FileName;
 
                     //Read the contents of the file into a stream
-                    var fileStream = openFileDialog.OpenFile();
-
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        fileContent = reader.ReadToEnd();
-                    }
+                    //var fileStream = openFileDialog.OpenFile();
+                    //
+                    //using (StreamReader reader = new StreamReader(fileStream))
+                    //{
+                    //    fileContent = reader.ReadToEnd();
+                    //}
                 }
             }
             form2_readImg.filePath = filePath;
@@ -209,6 +209,29 @@ namespace WindowsForms_image_processing
                 //MessageBox.Show(folderName + " path doesn't exist", "path doesn't exist  ", MessageBoxButtons.OK);
             }
 
+        }
+
+        private void projectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "image files (*.bmp)|*.bmp";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                }
+            }            
+            if (filePath != "")
+            {
+                Form_Pattern form_Pattern = new Form_Pattern();
+                form_Pattern.filePath = filePath;
+                form_Pattern.Visible = false;
+                form_Pattern.Show();
+            }
         }
     }
 }

@@ -38,15 +38,15 @@ namespace WindowsForms_image_processing
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 328);
+            this.pictureBox1.Size = new System.Drawing.Size(737, 404);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(567, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(550, 422);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(182, 244);
+            this.richTextBox1.Size = new System.Drawing.Size(199, 127);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 

@@ -32,8 +32,8 @@ namespace WindowsForms_image_processing
             int marker = 0;
             int[] connect_Mask = new int[9];
             Array.Clear(connect_Mask, 0, connect_Mask.Length);
-            Dictionary<int, int> pair = new Dictionary<int, int>();
-
+            Dictionary<int, List<int>> pair = new Dictionary<int, List<int>>();
+            //List<Pair> pairs = new List<Pair>();
             for (int Ycount = 0; Ycount < picture.Height; Ycount++)
             {
                 for (int Xcount = 0; Xcount < picture.Width; Xcount++)
@@ -81,8 +81,17 @@ namespace WindowsForms_image_processing
                                     if (chk_Table[i] != 0 && chk_Table[j] != 0)
                                         if (chk_Table[i] != chk_Table[j])
                                         {
-                                            if(!pair.ContainsKey(chk_Table[i]))
-                                                pair.Add(chk_Table[i], chk_Table[j]);
+                                            //pairs.Add(new Pair(chk_Table[i], chk_Table[j]));
+                                            if (!pair.ContainsKey(chk_Table[i]))
+                                            {
+                                                pair.Add(chk_Table[i], new List<int>());
+                                                pair[chk_Table[i]].Add(chk_Table[j]);
+                                            }
+                                            else
+                                            {
+                                                if(!pair[chk_Table[i]].Contains(chk_Table[j]))
+                                                    pair[chk_Table[i]].Add(chk_Table[j]);
+                                            }
                                         }
                                 }
                             }
@@ -129,9 +138,20 @@ namespace WindowsForms_image_processing
             //combine color of label pair
             for(int i = 0; i < pair.Count; i++)
             {
-                color[pair.ElementAt(i).Key] = color[pair.ElementAt(i).Value];
+                for(int j = 0;j< pair.ElementAt(i).Value.Count;j++)
+                     color[pair.ElementAt(i).Value[j]] =color[pair.ElementAt(i).Key];
+               //richTextBox1.AppendText("pair " + i + " : " + pair.ElementAt(i).Key+" : " + string.Join(",",pair.ElementAt(i).Value) + " .\n");
             }
 
+            for (int i = 0; i < pair.Count; i++)
+            {
+                for (int j = 0; j < pair.ElementAt(i).Value.Count; j++)
+                    color[pair.ElementAt(i).Value[j]] = color[pair.ElementAt(i).Key];
+                //richTextBox1.AppendText("pair " + i + " : " + pair.ElementAt(i).Key+" : " + string.Join(",",pair.ElementAt(i).Value) + " .\n");
+            }
+
+            //for(int i = 0;i <pairs.Count;i++)
+            //    richTextBox1.AppendText("pair "+i +" : "+ pairs.ElementAt(i).ToString()  + " .\n");
             Color[] unique_Color = color.Distinct().ToArray();
             
             //draw color
@@ -262,6 +282,20 @@ namespace WindowsForms_image_processing
             //    richTextBox1.AppendText("\n");
             //}
             
+        }
+    }
+    class Pair
+    {
+        public int a, b;
+        public Pair(int A,int B)
+        {
+            a = A;
+            b = B;
+        }
+
+        public new string ToString()
+        {
+           return ("["+a.ToString()+","+ b.ToString()+"]");
         }
     }
 }

@@ -317,6 +317,17 @@ namespace WindowsForms_image_processing
                 }
             }
         }
+        public void draw(Graphics g, string gray,int threshold)
+        {
+            for (int Ycount = 0; Ycount < height; Ycount++)
+            {
+                for (int Xcount = 0; Xcount < width; Xcount++)
+                {
+                    int Gray = my_Pixel[Xcount, Ycount].Gray>threshold?255:0;
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(Gray, Gray, Gray)), Xcount, Ycount, 1, 1);
+                }
+            }
+        }
         public int Width { get => width; set => width = value; }
         public int Height { get => height; set => height = value; }
     }

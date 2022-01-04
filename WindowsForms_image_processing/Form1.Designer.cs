@@ -37,8 +37,9 @@ namespace WindowsForms_image_processing
             this.videoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_form_container = new System.Windows.Forms.Panel();
             this.videoPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_form_container = new System.Windows.Forms.Panel();
+            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@ namespace WindowsForms_image_processing
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.bouncyBallToolStripMenuItem,
-            this.videoToolStripMenuItem});
+            this.videoToolStripMenuItem,
+            this.projectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(827, 24);
@@ -68,7 +70,7 @@ namespace WindowsForms_image_processing
             // 
             this.OpenToolStripMenuItem.Image = global::WindowsForms_image_processing.Properties.Resources.Document_16x;
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.OpenToolStripMenuItem.Text = "Open";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -95,16 +97,24 @@ namespace WindowsForms_image_processing
             // encodeToolStripMenuItem
             // 
             this.encodeToolStripMenuItem.Name = "encodeToolStripMenuItem";
-            this.encodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encodeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.encodeToolStripMenuItem.Text = "Encode";
             this.encodeToolStripMenuItem.Click += new System.EventHandler(this.encodeToolStripMenuItem_Click);
             // 
             // decodeToolStripMenuItem
             // 
             this.decodeToolStripMenuItem.Name = "decodeToolStripMenuItem";
-            this.decodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.decodeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.decodeToolStripMenuItem.Text = "Decode";
             this.decodeToolStripMenuItem.Click += new System.EventHandler(this.decodeToolStripMenuItem_Click);
+            // 
+            // videoPlayerToolStripMenuItem
+            // 
+            this.videoPlayerToolStripMenuItem.Image = global::WindowsForms_image_processing.Properties.Resources.PlayVideo_16x;
+            this.videoPlayerToolStripMenuItem.Name = "videoPlayerToolStripMenuItem";
+            this.videoPlayerToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.videoPlayerToolStripMenuItem.Text = "Video player";
+            this.videoPlayerToolStripMenuItem.Click += new System.EventHandler(this.videoPlayerToolStripMenuItem_Click);
             // 
             // panel_form_container
             // 
@@ -113,13 +123,13 @@ namespace WindowsForms_image_processing
             this.panel_form_container.Size = new System.Drawing.Size(827, 605);
             this.panel_form_container.TabIndex = 1;
             // 
-            // videoPlayerToolStripMenuItem
+            // projectToolStripMenuItem
             // 
-            this.videoPlayerToolStripMenuItem.Image = global::WindowsForms_image_processing.Properties.Resources.PlayVideo_16x;
-            this.videoPlayerToolStripMenuItem.Name = "videoPlayerToolStripMenuItem";
-            this.videoPlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.videoPlayerToolStripMenuItem.Text = "Video player";
-            this.videoPlayerToolStripMenuItem.Click += new System.EventHandler(this.videoPlayerToolStripMenuItem_Click);
+            this.projectToolStripMenuItem.Image = global::WindowsForms_image_processing.Properties.Resources.Path_16x;
+            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.projectToolStripMenuItem.Text = "Project";
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -153,6 +163,7 @@ namespace WindowsForms_image_processing
         private System.Windows.Forms.ToolStripMenuItem encodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem decodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem videoPlayerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
     }
 }
 
