@@ -1,4 +1,32 @@
 # WindowsForms_image_processing
+## TODO
+|name|function|
+|-|-|
+|Splash screen||
+|Interface operating| image coordinate(X,Y), RGB, HSI, Greyout|
+|Load File| header info, palette, show *.pcx image, show *.bmp image|
+|Color channel| RGB|
+|Gray Level| gray level, bit depth|
+|Cut| retangle, ellipse|
+|Scaling| zoom in(Decimation and Average), zoom out(Duplication and interpolation)|
+|Rotate| source->destination, destination->source|
+|Brightness||
+|Transparency| Overlapping|
+|signal-to-noise ratio(SNR)|
+|Histogram| Gray level histogram, RGB histogram|
+|Negative| RGB, Gray|
+|Thresholding| Otsu, manual|
+|Slicing| Bit-plane Slicing, Gray code, Watermark|
+|Contrast stretching| dynamic setup, default setup|
+|Filter| Outlier, Median(Square/Cross), Pseudo Median, Lowpass/Highpass, Edge crispening, High-boost filter, Gradient(Roberts/Sobel/Prewitt)|
+|Magic wand|
+|bouncy ball|
+|Historgram equalization| CDF|
+|Histogram Specification| CDF|
+|Connected Component| separate and drawing block|
+|Huffman| brightness distribution, encode|
+|Mpeg video| PSNR, motion vector encode, decode, play video|
+
 
 ## splash screen
 
