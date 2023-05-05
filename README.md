@@ -45,11 +45,21 @@
 ![image](https://user-images.githubusercontent.com/60963526/178910509-f91de112-4db0-4164-a711-61648dc3c8a3.png)
 
 ## image encode
+
+test images sequences
+
+![image](https://user-images.githubusercontent.com/60963526/236502454-1b3f802a-d192-4ac4-94d3-085680fd4d2b.png)
+
+![output_encode](https://user-images.githubusercontent.com/60963526/236502830-c0968b2e-a476-403e-8bbd-904e06fa9e7f.gif)
+
+
 ![image](https://user-images.githubusercontent.com/60963526/178911550-6f0d06c0-9149-4448-b1cd-8fbc4d55f143.png)
 
 
 ## image decode
 ![image](https://user-images.githubusercontent.com/60963526/178910956-395717f9-4d8b-432d-8205-8d712f727a17.png)
+
+
 
 ## Bouncy ball
 ![image](https://user-images.githubusercontent.com/60963526/178911679-03393222-76f6-45e7-9f85-0aa39ae5dbcd.png)
