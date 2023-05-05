@@ -35,6 +35,7 @@
 
 ## GUI
 ![image](https://user-images.githubusercontent.com/60963526/178910268-04beab42-45fc-4b4f-88a4-c1c6e5f9f704.png)
+![output](https://user-images.githubusercontent.com/60963526/236499522-1325d352-9887-42f1-9fd0-9e9ecb7c644a.gif)
 
 
 ## image processing function
