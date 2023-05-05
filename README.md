@@ -59,6 +59,9 @@ test images sequences
 ## image decode
 ![image](https://user-images.githubusercontent.com/60963526/178910956-395717f9-4d8b-432d-8205-8d712f727a17.png)
 
+## play video
+
+![output_player](https://user-images.githubusercontent.com/60963526/236510995-a240f7e4-9c48-4ff5-9623-be2b953a2037.gif)
 
 
 ## Bouncy ball
